@@ -48,5 +48,20 @@ let now: Date = new Date();
 
 **When Annotation should be used**
 
-- when function returns **any**
+- when function returns **any** .
   example JSON.parse()
+
+- when declaration and initialization is done in different place.
+
+- When we have variable whose type can't be inferred correctly.
+
+  ```js
+  let numbers = [-10, 1];
+  let numberAboveZero: boolean | number = false;
+
+  numbers.foreach((num) => {
+    if (num > 0) {
+      numberAboveZero = num;
+    }
+  });
+  ```
